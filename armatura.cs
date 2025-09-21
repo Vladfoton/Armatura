@@ -326,7 +326,20 @@ namespace Programm1
             return hash;
         }
 
+        public static Armatura operator +(Armatura p1, Armatura p2)
+        {
+            if(!p1.Equals(p2)) return p1;
+            if (p1.isMetrP)
+            {
+                p1.Length += p2.Length;
+            }
+            else 
+            {
+                p1.Count += p2.Count;
+            }
+            return p1;
 
+        }
 
 
 

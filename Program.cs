@@ -29,7 +29,10 @@ namespace Programm1
             foreach (KeyValuePair<string, Armatura> pair in armaturaList)
                 Console.WriteLine($"Марка арматуры : {pair.Value.Marka} Диаметр арматуры : {pair.Value.Diametr} Класс арматуры : {pair.Value.Klass} Стандарт : {pair.Value.Standart} Длина : {pair.Value.Length} Масса ед : {pair.Value.Massa1p} IsMetr : {pair.Value.IsMetrP} Count : {pair.Value.Count}");
 
-            Console.WriteLine(Utils.IsAllDigits("-.100"));
+            Armatura arm1 = new Armatura("П10-1", 1200, 10);
+            Armatura arm2 = new Armatura("П10-1", 1500, 20);
+            Armatura arm3 = arm1 + arm2;
+            Console.WriteLine($"Марка арматуры : {arm3.Marka} Диаметр арматуры : {arm3.Diametr} Класс арматуры : {arm3.Klass} Стандарт : {arm3.Standart} Длина : {arm3.Length} Масса ед : {arm3.Massa1p} IsMetr : {arm3.IsMetrP} Count : {arm3.Count}");
 
 
         }
