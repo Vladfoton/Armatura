@@ -18,11 +18,13 @@ namespace Programm1.Database
 
         public static Dictionary<string, string[]> VedDetalei() 
         {   /// Тестовая версия
-            Dictionary<string, string[]> vedDetList = new Dictionary<string, string[]>();
-            vedDetList.Add("П10-1", new string[] { "10", "2400", "A500C", "ГОСТ 34028-2016"});
-            vedDetList.Add("П12г-1",new string[]{ "12", "1200", "A240", "ГОСТ 34028-2016" });
-            vedDetList.Add("П16-1", new string[]{ "16","9800", "A500C", "ГОСТ 34028-2016" });
-            vedDetList.Add("Р5-1", new string[] { "5", "750", "Вр1", "ГОСТ 6727-80" });
+            Dictionary<string, string[]> vedDetList = new Dictionary<string, string[]>()
+            {
+            {"П10-1", new string[] { "10", "2400", "A500C", "ГОСТ 34028-2016"} },
+            {"П12г-1",new string[]{ "12", "1200", "A240", "ГОСТ 34028-2016" } },
+            { "П16-1", new string[]{ "16","9800", "A500C", "ГОСТ 34028-2016" } },
+            { "Р5-1", new string[] { "5", "750", "Вр1", "ГОСТ 6727-80" } }
+            };
             return vedDetList;
         }
 

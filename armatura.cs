@@ -227,7 +227,7 @@ namespace Programm1
             get { return this.isMetrP; }
             private set
             {
-                if (vedDetList.TryGetValue(this.marka, out string[] value1))// Если марка есть в ведомости деталей
+                if (vedDetList.ContainsKey(this.marka))// Если марка есть в ведомости деталей
                     this.isMetrP = false;// то поштучный подсчет
                 else
                     this.isMetrP = true;
@@ -266,7 +266,7 @@ namespace Programm1
             get { return this.count; }
             set
             {
-                if (vedDetList.TryGetValue(this.marka, out string[] value1))// Если марка есть в ведомости деталей
+                if (vedDetList.ContainsKey(this.marka))// Если марка есть в ведомости деталей
                 {
                     this.count = value;
                 }
