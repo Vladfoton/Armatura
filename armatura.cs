@@ -288,8 +288,6 @@ namespace Programm1
 
         }
 
-
-
         public override bool Equals(object obj)// Условия равенства
         {
             if (!(obj is Armatura)) return false;
@@ -328,22 +326,18 @@ namespace Programm1
 
         public static Armatura operator +(Armatura p1, Armatura p2)
         {
-            if(!p1.Equals(p2)) return p1;
+            if (!p1.Equals(p2)) return p1;
             if (p1.isMetrP)
             {
                 p1.Length += p2.Length;
             }
-            else 
+            else
             {
                 p1.Count += p2.Count;
             }
             return p1;
 
         }
-
-
-
-
 
     }
 }
