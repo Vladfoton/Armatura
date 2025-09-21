@@ -17,14 +17,14 @@ namespace Programm1.Util
         /// и '.' и ','
         {
             snum = snum.Trim();// Избавляемся от пробелов
-            bool negativ = false;
+            //bool negativ = false;
             bool integer = true;
             if (snum.Length == 0) return false;// Если строка пустая возвращаем false
 
             if (snum[0] == '-')// Если число отрицательное
             {
                 snum = snum.Substring(1);
-                negativ = true;
+                //negativ = true;
             }
 
             if (snum[0] == '.' || snum[0] == ',')// Если число дробное

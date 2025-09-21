@@ -16,7 +16,7 @@ namespace Programm1.Database
             return dmassa;
         }
 
-        public static Dictionary<string, string[]> VedDetalei() 
+        public static Dictionary<string, string[]> VedDetalei()
         {   /// Тестовая версия
             Dictionary<string, string[]> vedDetList = new Dictionary<string, string[]>()
             {

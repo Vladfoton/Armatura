@@ -295,9 +295,9 @@ namespace Programm1
             if (!(obj is Armatura)) return false;
             Armatura other = (Armatura)obj;
             if (this.IsMetrP)
-                return (this.IsMetrP == other.IsMetrP) && (this.Marka == other.Marka) && (this.Diametr == other.Diametr) && (this.Klass == other.Klass);
+                return (this.IsMetrP == other.IsMetrP) && (this.Marka == other.Marka) && (this.Diametr == other.Diametr) && (this.Klass == other.Klass) && (this.Standart == other.Standart);
             else
-                return (this.IsMetrP == other.IsMetrP) && (this.Marka == other.Marka) && (this.Length == other.Length) && (this.Diametr == other.Diametr) && (this.Klass == other.Klass);
+                return (this.IsMetrP == other.IsMetrP) && (this.Marka == other.Marka) && (this.Length == other.Length) && (this.Diametr == other.Diametr) && (this.Klass == other.Klass) && (this.Standart == other.Standart);
         }
         public static bool operator ==(Armatura p1, Armatura p2)
         {
@@ -311,6 +311,19 @@ namespace Programm1
             if (p1 is null && p2 is null) return false;
             if (p1 is null || p2 is null) return true;
             return !p1.Equals(p2);
+        }
+
+        public override int GetHashCode()
+        {
+            int hash = 17;
+            hash = 23 * hash + this.IsMetrP.GetHashCode();
+            hash = 25 * hash + this.Marka.GetHashCode();
+            hash = 27 * hash + this.Diametr.GetHashCode();
+            hash = 28 * hash + this.Klass.GetHashCode();
+            hash = 15 * hash + this.Standart.GetHashCode();
+            if (!this.IsMetrP)
+                hash = 11 * hash + this.Length.GetHashCode();
+            return hash;
         }
 
 
