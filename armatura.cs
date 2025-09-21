@@ -17,16 +17,16 @@ namespace Programm1
         private string klass; // Класс арматуры
         private string standart; // Стандарт
         private float massa1p; // Масса 1 ед (п.м. или шт)
-        private static byte[] diametrlist = Databases.DiametrList(); // Список возможных диаметров
-        private static float[] dmassa = Databases.Dmassa(); // Список масс
-        private static Dictionary<string, string[]> vedDetList = Databases.VedDetalei(); // Список ведомостей деталей
+        private static readonly byte[] diametrlist = Databases.DiametrList(); // Список возможных диаметров
+        private static readonly float[] dmassa = Databases.Dmassa(); // Список масс
+        private static readonly Dictionary<string, string[]> vedDetList = Databases.VedDetalei(); // Список ведомостей деталей
 
         private bool isMetrP = true; // true если масса на п.м.; false если на 1 штуку
         private uint length; // длина линейной позиции
         private ushort count; // Количество шт.
 
 
-        public Armatura(string marka,  uint length, ushort count, string klass, string standart)
+        public Armatura(string marka, uint length, ushort count, string klass, string standart)
         {
             this.Marka = marka;
             this.Diametr = 10;// Фиктивное присвоение
@@ -71,7 +71,7 @@ namespace Programm1
             get { return this.marka; }
             private set
             {
-                    this.marka = value;
+                this.marka = value;
             }
         }
 

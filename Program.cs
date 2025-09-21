@@ -5,7 +5,7 @@ namespace Programm1
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
 
 
@@ -16,7 +16,7 @@ namespace Programm1
             for (int i = 0; i < marklist.Length; i++)
             { try
                 {
-                    armaturaList.Add(marklist[i], new Armatura(marklist[i], countlist[i]));
+                    armaturaList.Add(marklist[i], new Armatura(marklist[i], lenlist[i],countlist[i]));
                 }
                 catch 
                 {   // Переход к следующей позиции в случае некорректных исходных данных. Некорректная позиция не добавятся
