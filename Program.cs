@@ -1,6 +1,7 @@
 ﻿using Programm1.Util;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace Programm1
 {
@@ -35,7 +36,32 @@ namespace Programm1
             Console.WriteLine($"Марка арматуры : {arm3.Marka} Диаметр арматуры : {arm3.Diametr} Класс арматуры : {arm3.Klass} Стандарт : {arm3.Standart} Длина : {arm3.Length} Масса ед : {arm3.Massa1p} IsMetr : {arm3.IsMetrP} Count : {arm3.Count}");
 
 
-        }
+
+            string stroka = "'':('ГОСТ 34028-2016', 'А500C');'г':('ГОСТ 34028-2016', 'А240');'в':('ГОСТ 6727-80', 'ВрI)";
+            string[] armstr= stroka.Split(';');
+            Dictionary<string, string[]> armStandart = new Dictionary<string, string[]>(); ;
+            foreach (string s in armstr)
+            {
+                string[] armstr1 = s.Split(':');
+                string key = armstr1[0];
+                string[] value = armstr1[1].Split(',');
+                
+                string[] value1={ value[0].Trim('(', ' ', '\''), value[1].Trim(')',' ','\'') };
+                key = key.Trim('\'');
+
+                armStandart.Add(key,  value1 );
+            }
+
+            foreach( KeyValuePair<string, string[]> valuePair in armStandart)
+            {
+                Console.WriteLine($"key: {valuePair.Key}  value : {String.Join(" ", valuePair.Value)}  ");
+
+
+            }
+            Console.WriteLine(armStandart[""] + "  "+ String.Join(" ", armStandart[""]));
+
+
+    }
 
 
 
